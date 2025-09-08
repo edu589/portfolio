@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-es="Portafolio" data-en="Portfolio">Portafolio</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/light_logo.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js"></script>
+</head>
+<body data-theme="dark">
+
+    <div class="dynamic-bg" id="dynamicBg"></div>
+
+    <header class="mobile-header">
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="mobile-controls">
+            <button class="theme-toggle" id="mobileThemeToggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="lang-toggle" id="mobileLangToggle">EN</button>
+        </div>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <img id="logoImg" class="logo-container" src="assets/img/light_logo.png" />
+            <h2 data-es="Portafolio" data-en="Portfolio">Portafolio</h2>
+            <p data-es="Desarrollador de Software" data-en="Software Developer">Desarrollador de Software</p>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-section="inicio">
+                        <i class="fas fa-home"></i>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="conocimientos">
+                        <i class="fas fa-code"></i>
+                        <span data-es="Conocimientos" data-en="Skills">Conocimientos</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-section="proyectos">
+                        <i class="fas fa-laptop-code"></i>
+                        <span data-es="Proyectos" data-en="Projects">Proyectos</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="controls">
+            <div class="control-group">
+                <span data-es="Tema" data-en="Theme">Tema</span>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="control-group">
+                <span data-es="Idioma" data-en="Language">Idioma</span>
+                <button class="lang-toggle" id="langToggle">EN</button>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>eduardo.silva.munoz.765@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+593 994144964</span>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eduardo-silva-407a9737a" 
+                    class="social-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/edu589" 
+                    class="social-link" 
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="section active" id="inicio">
+            <div class="hero">
+                <h1 data-es="Hola,soy Eduardo" data-en="Hello, I'm Eduardo">Hola,soy Eduardo</h1>
+                <h2 data-es="Desarrollador de Software" data-en="Software Developer">Desarrollador de Software</h2>
+                <p class="hero-description" data-es="Recién graduado en Tecnología Superior en Desarrollo de Software, con experiencia en proyectosacadémicos y pasantías. Apasionado por el desarrollo web seguro, escalable y responsivo. Me caracterizo por un aprendizajerápido, capacidad de trabajo en equipo y adaptación a nuevas tecnologías. Busco aportar mis conocimientos y seguircreciendo profesionalmente dentro de un entorno dinámico e innovador." data-en="Recent graduate in Software Development Technology, with experience in academic projects and internships. Passionate about building secure, scalable, and responsive web applications. Recognized for quick learning, teamwork, and adaptability to new technologies. Seeking to contribute my knowledge and continue growing professionally in a dynamic and innovative environment.">
+                    Recién graduado en Tecnología Superior en Desarrollo de Software, con experiencia en proyectos
+                    académicos y pasantías. Apasionado por el desarrollo web seguro, escalable y responsivo. Me caracterizo por un aprendizaje
+                    rápido, capacidad de trabajo en equipo y adaptación a nuevas tecnologías. Busco aportar mis conocimientos y seguir
+                    creciendo profesionalmente dentro de un entorno dinámico e innovador.
+                </p>
+                <button class="download-cv">
+                    <i class="fas fa-download"></i>
+                    <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+                </button>
+
+                <div id="cv-loader-modal" style="display: none;" class="modal">
+                    <div class="modal-content">
+                        <p class="modal-text" data-es="    Preparando descarga..." data-en="   Preparing download...">
+                            Preparando descarga...
+                        </p>
+                    </div>
+                </div>
+
+                <div id="cv-error-modal" style="display: none;" class="modal">
+                    <div class="modal-content">
+                        <p class="modal-text" data-es="    No se pudo descargar el CV. Intenta de nuevo."
+                        data-en="   Could not download CV. Please try again.">
+                            No se pudo descargar el CV. Intenta de nuevo.
+                        </p>
+                        <button id="close-error"
+                        data-es="Cerrar"
+                        data-en="Close">
+                        Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="conocimientos">
+            <h2 class="section-title" data-es="Mis Conocimientos" data-en="My Skills">Mis Conocimientos</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Front-End</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag html"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag css"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag javascript"><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span class="skill-tag react"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag bootstrap"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-tag tailwind"><i class="fas fa-wind"></i> Tailwind</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Back-End</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag php"><i class="fab fa-php"></i> PHP</span>
+                        <span class="skill-tag java"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag csharp"><i class="fas fa-hashtag"></i> C#</span>
+                        <span class="skill-tag nodejs"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag python"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag laravel"><i class="fab fa-laravel"></i> Laravel</span>
+                        <span class="skill-tag spring"><i class="fas fa-leaf"></i> Spring Boot</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> <span data-es="Base de Datos" data-en="Database">Base de Datos</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag mysql"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-tag postgresql"><i class="fas fa-elephant"></i> PostgreSQL</span>
+                        <span class="skill-tag sqlserver"><i class="fas fa-server"></i> SQL Server</span>
+                        <span class="skill-tag sqlite"><i class="fas fa-cube"></i> SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> <span data-es="Herramientas" data-en="Tools">Herramientas</span></h3>
+                    <div class="skill-list">
+                        <span class="skill-tag git"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag github"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag postman"><i class="fas fa-mail-bulk"></i> Postman</span>
+                        <span class="skill-tag docker"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag vscode"><i class="fas fa-code"></i> VS Code</span>
+                        <span class="skill-tag figma"><i class="fab fa-figma"></i> Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="proyectos">
+            <h2 class="section-title" data-es="Mis Proyectos" data-en="My Projects">Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/img/projects/rick_and_morty.png" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title" data-es="Universo de Rick y Morty" data-en="Rick and Morty Universe">Universo de Rick y Morty</h3>
+                        <p class="project-description" data-es="Aplicación en React.js que integra la API pública de Rick and Morty para la consulta y filtrado de personajes. Implementa funcionalidades de persistencia local para gestionar personajes seleccionados, con operaciones de edición, duplicado y eliminación sobre los registros almacenados." data-en="React.js application integrating the public Rick and Morty API for character retrieval and filtering. Implements local persistence to manage selected characters, with support for editing, duplicating, and deleting stored records.   ">
+                            Aplicación en React.js que integra la API pública de Rick and Morty para la consulta y filtrado de personajes. Implementa funcionalidades de persistencia local para gestionar personajes seleccionados, con operaciones de edición, duplicado y eliminación sobre los registros almacenados.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag "><i class="fab fa-react"></i> React</span>
+                            <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://edu589.github.io/RickAndMortyUniverse" 
+                                class="project-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-es="Ver Demo" data-en="View Demo">Ver Demo</span>
+                            </a>
+
+                            <a href="https://github.com/edu589/RickAndMortyUniverse" 
+                                class="project-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                <span data-es="Código" data-en="Code">Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+    </main>   
+   
+</body>
+</html>
